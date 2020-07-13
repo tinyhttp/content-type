@@ -1,7 +1,7 @@
 {
   "name": "es-content-type",
   "description": "content-type rewrite in TypeScript with ESM and CommonJS targets",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": "https://github.com/talentlessguy/es-content-type.git",
   "engines": {
     "node": ">=13"
@@ -13,7 +13,6 @@
   "author": "talentlessguy <pilll.PL22@gmail.com>",
   "license": "MIT",
   "main": "dist/index.js",
-  "type": "module",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "exports": {
