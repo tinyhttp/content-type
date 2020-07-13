@@ -1,7 +1,7 @@
 {
   "name": "es-content-type",
   "description": "content-type rewrite in TypeScript with ESM and CommonJS targets",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "repository": "https://github.com/talentlessguy/es-content-type.git",
   "engines": {
     "node": ">=13"
