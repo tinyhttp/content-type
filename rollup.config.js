@@ -1,4 +1,4 @@
-const ts = require('rollup-plugin-typescript2')
+import ts from 'rollup-plugin-typescript2'
 
 export default {
   input: 'src/index.ts',
