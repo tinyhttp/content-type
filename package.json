@@ -1,7 +1,7 @@
 {
   "name": "es-content-type",
   "description": "content-type rewrite in TypeScript with ESM and CommonJS targets",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "repository": "https://github.com/talentlessguy/es-content-type.git",
   "engines": {
     "node": ">=13"
@@ -12,24 +12,25 @@
   ],
   "author": "talentlessguy <pilll.PL22@gmail.com>",
   "license": "MIT",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.esm.js",
-      "require": "./dist/index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     },
     "./package.json": "./package.json",
     "./": "./"
   },
   "devDependencies": {
     "@types/node": "^14.0.22",
-    "bili": "^5.0.5",
+    "rollup": "^2.21.0",
     "rollup-plugin-typescript2": "^0.27.1",
     "typescript": "^3.9.6"
   },
   "scripts": {
-    "build": "bili --format esm --format cjs src/index.ts"
+    "build": "rollup -c"
   }
 }
