@@ -1,7 +1,7 @@
 {
   "name": "es-content-type",
   "description": "content-type rewrite in TypeScript with ESM and CommonJS targets",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "repository": "https://github.com/talentlessguy/es-content-type.git",
   "engines": {
     "node": ">=12.x"
@@ -26,11 +26,11 @@
   },
   "devDependencies": {
     "@types/node": "^14.6.0",
-    "rollup": "^2.26.4",
-    "rollup-plugin-typescript2": "^0.27.2",
+    "tsup": "^3.6.1",
     "typescript": "^4.0.2"
   },
   "scripts": {
-    "build": "rollup -c"
+    "prepare": "pnpm build",
+    "build": "tsup src/index.ts --minify-whitespace --format cjs,esm --dts"
   }
 }
