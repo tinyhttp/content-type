@@ -1,9 +1,9 @@
 # es-content-type
 
-![Top lang](https://img.shields.io/github/languages/top/talentlessguy/es-content-type.svg?style=flat-square)
+
 ![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/npm/es-content-type.svg?style=flat-square)
 [![Version](https://img.shields.io/npm/v/es-content-type.svg?style=flat-square)](https://npm.im/es-content-type)
-![Last commit](https://img.shields.io/github/last-commit/talentlessguy/es-content-type.svg?style=flat-square)
+
 
 > [`content-type`](https://github.com/jshttp/content-type) rewrite in TypeScript with ESM and CommonJS targets.
 

@@ -1,7 +1,7 @@
 {
   "name": "es-content-type",
   "description": "content-type rewrite in TypeScript with ESM and CommonJS targets",
-  "version": "0.0.10",
+  "version": "0.1.0",
   "repository": "https://github.com/talentlessguy/es-content-type.git",
   "engines": {
     "node": ">=12.x"
@@ -13,24 +13,15 @@
   "author": "talentlessguy <pilll.PL22@gmail.com>",
   "license": "MIT",
   "type": "module",
-  "main": "dist/index.cjs",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    },
-    "./package.json": "./package.json",
-    "./": "./"
-  },
+  "types": "./dist/index.d.ts",
+  "exports": "./dist/index.js",
   "devDependencies": {
-    "@types/node": "^14.14.11",
-    "tsup": "^3.10.1",
-    "typescript": "^4.1.2"
+    "@types/node": "^15.12.2",
+    "tsup": "^4.11.2",
+    "typescript": "^4.3.2"
   },
   "scripts": {
     "prepare": "pnpm build",
-    "build": "tsup src/index.ts --minify-whitespace --format cjs,esm --dts"
+    "build": "tsup src/index.ts --minify-whitespace --format esm --dts"
   }
 }
