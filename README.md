@@ -1,6 +1,5 @@
 # es-content-type
 
-[![Twitter](https://img.shields.io/twitter/follow/v1rtl.svg?label=twitter&style=flat-square)](https://twitter.com/v1rtl)
 ![Top lang](https://img.shields.io/github/languages/top/talentlessguy/es-content-type.svg?style=flat-square)
 ![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/npm/es-content-type.svg?style=flat-square)
 [![Version](https://img.shields.io/npm/v/es-content-type.svg?style=flat-square)](https://npm.im/es-content-type)
@@ -76,7 +75,3 @@ shown that produce the string `'image/svg+xml; charset=utf-8'`):
   parameter will be lower-cased). Example: `{charset: 'utf-8'}`
 
 Throws a `TypeError` if the object contains an invalid type or parameter names.
-
-## License
-
-MIT © [v1rtl](https://v1rtl.site)
