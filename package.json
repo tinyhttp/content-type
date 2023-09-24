@@ -7,8 +7,7 @@
     "node": ">=12.x"
   },
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "author": "v1rtl <hi@v1rtl.site>",
   "license": "MIT",
