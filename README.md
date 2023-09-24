@@ -1,7 +1,6 @@
 # @tinyhttp/content-type
 
-![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/npm/@tinyhttp/content-type.svg?style=flat-square)
-[![Version](https://img.shields.io/npm/v/@tinyhttp/content-type.svg?style=flat-square)](https://npm.im/@tinyhttp/content-type)
+[![Version][v-badge-url]][npm-url] [![Downloads][dl-badge-url]][npm-url] [![GitHub Workflow Status][gh-actions-img]][github-actions] [![Codecov][cov-badge-url]][cov-url]
 
 > [`content-type`](https://github.com/jshttp/content-type) rewrite in TypeScript and ESM.
 
@@ -73,3 +72,11 @@ shown that produce the string `'image/svg+xml; charset=utf-8'`):
   parameter will be lower-cased). Example: `{charset: 'utf-8'}`
 
 Throws a `TypeError` if the object contains an invalid type or parameter names.
+
+[v-badge-url]: https://img.shields.io/npm/v/@tinyhttp/content-type.svg?style=for-the-badge&color=FF69B4&label=&logo=npm
+[npm-url]: https://www.npmjs.com/package/@tinyhttp/content-type
+[cov-badge-url]: https://img.shields.io/coveralls/github/tinyhttp/@tinyhttp/content-type?style=for-the-badge&color=FF69B4
+[cov-url]: https://coveralls.io/github/tinyhttp/@tinyhttp/content-type
+[dl-badge-url]: https://img.shields.io/npm/dt/@tinyhttp/content-type?style=for-the-badge&color=FF69B4
+[github-actions]: https://github.com/tinyhttp/@tinyhttp/content-type/actions
+[gh-actions-img]: https://img.shields.io/github/actions/workflow/status/tinyhttp/@tinyhttp/content-type/main.yml?branch=master&style=for-the-badge&color=FF69B4&label=&logo=github

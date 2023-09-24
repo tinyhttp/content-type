@@ -4,7 +4,7 @@
   "version": "0.1.2",
   "repository": "https://github.com/tinyhttp/content-type.git",
   "engines": {
-    "node": ">=12.x"
+    "node": ">=12.4"
   },
   "files": [
     "dist"
