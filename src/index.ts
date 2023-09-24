@@ -1,4 +1,7 @@
-import { IncomingMessage as Request, ServerResponse as Response } from 'http'
+import {
+  IncomingMessage as Request,
+  ServerResponse as Response,
+} from 'node:http'
 
 /**
  * RegExp to match *( ";" parameter ) in RFC 7231 sec 3.1.1.1
@@ -14,7 +17,8 @@ import { IncomingMessage as Request, ServerResponse as Response } from 'http'
  * obs-text      = %x80-FF
  * quoted-pair   = "\" ( HTAB / SP / VCHAR / obs-text )
  */
-const PARAM_REGEXP = /; *([!#$%&'*+.^_`|~0-9A-Za-z-]+) *= *("(?:[\u000b\u0020\u0021\u0023-\u005b\u005d-\u007e\u0080-\u00ff]|\\[\u000b\u0020-\u00ff])*"|[!#$%&'*+.^_`|~0-9A-Za-z-]+) */g
+const PARAM_REGEXP =
+  /; *([!#$%&'*+.^_`|~0-9A-Za-z-]+) *= *("(?:[\u000b\u0020\u0021\u0023-\u005b\u005d-\u007e\u0080-\u00ff]|\\[\u000b\u0020-\u00ff])*"|[!#$%&'*+.^_`|~0-9A-Za-z-]+) */g
 const TEXT_REGEXP = /^[\u000b\u0020-\u007e\u0080-\u00ff]+$/
 const TOKEN_REGEXP = /^[!#$%&'*+.^_`|~0-9A-Za-z-]+$/
 
@@ -40,14 +44,14 @@ const QUOTE_REGEXP = /([\\"])/g
  */
 const TYPE_REGEXP = /^[!#$%&'*+.^_`|~0-9A-Za-z-]+\/[!#$%&'*+.^_`|~0-9A-Za-z-]+$/
 
-function qstring(val: any) {
+function qstring(val: unknown) {
   const str = String(val)
 
   // no need to quote tokens
   if (TOKEN_REGEXP.test(str)) return str
-  
 
-  if (str.length > 0 && !TEXT_REGEXP.test(str)) throw new TypeError('invalid parameter value')
+  if (str.length > 0 && !TEXT_REGEXP.test(str))
+    throw new TypeError('invalid parameter value')
 
   return '"' + str.replace(QUOTE_REGEXP, '\\$1') + '"'
 }
@@ -75,7 +79,7 @@ function getcontenttype(obj: Request | Response) {
  * Class to represent a content type.
  */
 class ContentType {
-  parameters: any
+  parameters: Record<string, unknown>
   type: string
   constructor(type: string) {
     this.parameters = {}
@@ -86,13 +90,13 @@ class ContentType {
 /**
  * Format object to media type.
  */
-export function format(obj: any) {
-  if (!obj || typeof obj !== 'object') throw new TypeError('argument obj is required')
+export function format(obj: ContentType) {
+  if (!obj || typeof obj !== 'object')
+    throw new TypeError('argument obj is required')
 
   const { parameters, type } = obj
 
   if (!type || !TYPE_REGEXP.test(type)) throw new TypeError('invalid type')
-  
 
   let string = type
 
@@ -101,7 +105,8 @@ export function format(obj: any) {
     const params = Object.keys(parameters).sort()
 
     for (const param of params) {
-      if (!TOKEN_REGEXP.test(param)) throw new TypeError('invalid parameter name')
+      if (!TOKEN_REGEXP.test(param))
+        throw new TypeError('invalid parameter name')
 
       string += '; ' + param + '=' + qstring(parameters[param])
     }
@@ -113,20 +118,19 @@ export function format(obj: any) {
 /**
  * Parse media type to object.
  */
-export function parse(string: string | Request | Response) {
+export function parse(string: string | Request | Response): ContentType {
   if (!string) throw new TypeError('argument string is required')
 
   // support req/res-like objects as argument
   const header = typeof string == 'object' ? getcontenttype(string) : string
 
-  if (typeof header !== 'string') throw new TypeError('argument string is required to be a string')
-  
+  if (typeof header !== 'string')
+    throw new TypeError('argument string is required to be a string')
 
   let index = header.indexOf(';')
-  const type = index != -1 ? header.substr(0, index).trim() : header.trim()
+  const type = index != -1 ? header.substring(0, index).trim() : header.trim()
 
   if (!TYPE_REGEXP.test(type)) throw new TypeError('invalid media type')
-  
 
   const obj = new ContentType(type.toLowerCase())
 
@@ -140,7 +144,6 @@ export function parse(string: string | Request | Response) {
 
     while ((match = PARAM_REGEXP.exec(header))) {
       if (match.index !== index) throw new TypeError('invalid parameter format')
-      
 
       index += match[0].length
       key = match[1].toLowerCase()
@@ -148,7 +151,7 @@ export function parse(string: string | Request | Response) {
 
       if (value[0] == '"') {
         // remove quotes and escapes
-        value = value.substr(1, value.length - 2).replace(QESC_REGEXP, '$1')
+        value = value.substring(1, value.length - 2).replace(QESC_REGEXP, '$1')
       }
 
       obj.parameters[key] = value

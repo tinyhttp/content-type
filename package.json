@@ -1,8 +1,8 @@
 {
-  "name": "es-content-type",
-  "description": "content-type rewrite in TypeScript with ESM and CommonJS targets",
+  "name": "@tinyhttp/content-type",
+  "description": "content-type rewrite in TypeScript and ESM",
   "version": "0.1.0",
-  "repository": "https://github.com/talentlessguy/es-content-type.git",
+  "repository": "https://github.com/tinyhttp/content-type.git",
   "engines": {
     "node": ">=12.x"
   },
@@ -10,18 +10,18 @@
     "dist",
     "src"
   ],
-  "author": "talentlessguy <pilll.PL22@gmail.com>",
+  "author": "v1rtl <hi@v1rtl.site>",
   "license": "MIT",
   "type": "module",
   "types": "./dist/index.d.ts",
   "exports": "./dist/index.js",
   "devDependencies": {
-    "@types/node": "^16.0.0",
-    "tsup": "^4.12.0",
-    "typescript": "^4.3.5"
+    "@types/node": "^20.6.4",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2"
   },
   "scripts": {
     "prepare": "pnpm build",
-    "build": "tsup src/index.ts --minify-whitespace --format esm --dts"
+    "build": "tsup src/index.ts --format esm --dts"
   }
 }

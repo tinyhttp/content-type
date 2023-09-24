@@ -1,24 +1,22 @@
-# es-content-type
+# @tinyhttp/content-type
 
+![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/npm/@tinyhttp/content-type.svg?style=flat-square)
+[![Version](https://img.shields.io/npm/v/@tinyhttp/content-type.svg?style=flat-square)](https://npm.im/@tinyhttp/content-type)
 
-![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/npm/es-content-type.svg?style=flat-square)
-[![Version](https://img.shields.io/npm/v/es-content-type.svg?style=flat-square)](https://npm.im/es-content-type)
-
-
-> [`content-type`](https://github.com/jshttp/content-type) rewrite in TypeScript with ESM and CommonJS targets.
+> [`content-type`](https://github.com/jshttp/content-type) rewrite in TypeScript and ESM.
 
 Create and parse HTTP Content-Type header according to RFC 7231
 
 ## Install
 
 ```sh
-pnpm i es-content-type
+pnpm i @tinyhttp/content-type
 ```
 
 ## API
 
 ```ts
-import { parse, format } from 'es-content-type'
+import { parse, format } from '@tinyhttp/content-type'
 ```
 
 ### `parse(string: string | Request | Response)`
