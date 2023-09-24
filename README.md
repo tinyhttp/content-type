@@ -75,8 +75,8 @@ Throws a `TypeError` if the object contains an invalid type or parameter names.
 
 [v-badge-url]: https://img.shields.io/npm/v/@tinyhttp/content-type.svg?style=for-the-badge&color=FF69B4&label=&logo=npm
 [npm-url]: https://www.npmjs.com/package/@tinyhttp/content-type
-[cov-badge-url]: https://img.shields.io/coveralls/github/tinyhttp/@tinyhttp/content-type?style=for-the-badge&color=FF69B4
+[cov-badge-url]: https://img.shields.io/coveralls/github/tinyhttp/content-type?style=for-the-badge&color=FF69B4
 [cov-url]: https://coveralls.io/github/tinyhttp/@tinyhttp/content-type
 [dl-badge-url]: https://img.shields.io/npm/dt/@tinyhttp/content-type?style=for-the-badge&color=FF69B4
-[github-actions]: https://github.com/tinyhttp/@tinyhttp/content-type/actions
-[gh-actions-img]: https://img.shields.io/github/actions/workflow/status/tinyhttp/@tinyhttp/content-type/main.yml?branch=master&style=for-the-badge&color=FF69B4&label=&logo=github
+[github-actions]: https://github.com/tinyhttp/content-type/actions
+[gh-actions-img]: https://img.shields.io/github/actions/workflow/status/tinyhttp/content-type/ci.yml?branch=master&style=for-the-badge&color=FF69B4&label=&logo=github
