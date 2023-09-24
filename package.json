@@ -1,7 +1,7 @@
 {
   "name": "@tinyhttp/content-type",
   "description": "content-type rewrite in TypeScript and ESM",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "repository": "https://github.com/tinyhttp/content-type.git",
   "engines": {
     "node": ">=12.4"
