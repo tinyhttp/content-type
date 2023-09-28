@@ -22,7 +22,8 @@
     "eslint": "^8.50.0",
     "tsm": "^2.3.0",
     "tsup": "^7.2.0",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "uvu": "^0.5.6"
   },
   "scripts": {
     "prepare": "pnpm build",
@@ -30,9 +31,6 @@
     "test": "uvu -r tsm test",
     "test:coverage": "c8 --include=src pnpm test",
     "test:report": "c8 report --reporter=text-lcov > coverage.lcov"
-  },
-  "dependencies": {
-    "uvu": "^0.5.6"
   },
   "publishConfig": {
     "access": "public"
